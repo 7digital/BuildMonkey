@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildMonkey", "BuildMonkey\BuildMonkey.csproj", "{9D718FFC-6AB8-4A9A-B152-F848F11B983B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildMonkey.Tests", "BuildMonkey.Tests\BuildMonkey.Tests.csproj", "{5C1D3714-6721-4D94-A1A7-453E50AD5BC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D718FFC-6AB8-4A9A-B152-F848F11B983B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D718FFC-6AB8-4A9A-B152-F848F11B983B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D718FFC-6AB8-4A9A-B152-F848F11B983B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D718FFC-6AB8-4A9A-B152-F848F11B983B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1D3714-6721-4D94-A1A7-453E50AD5BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1D3714-6721-4D94-A1A7-453E50AD5BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1D3714-6721-4D94-A1A7-453E50AD5BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1D3714-6721-4D94-A1A7-453E50AD5BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

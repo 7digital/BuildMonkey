@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D718FFC-6AB8-4A9A-B152-F848F11B983B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildMonkey</RootNamespace>
+    <AssemblyName>BuildMonkey</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BuildMonkey.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Topshelf">
+      <HintPath>..\lib\Topshelf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BuildMonkey.cs" />
+    <Compile Include="SelectionStrategies\BuildTypeSelectionStrategy.cs" />
+    <Compile Include="SelectionStrategies\ISelectionStrategy.cs" />
+    <Compile Include="TeamCity\IGetAllProjectsCommand.cs" />
+    <Compile Include="TeamCity\IGetBuildTypesCommand.cs" />
+    <Compile Include="Web\IWebRequestMaker.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="SelectionStrategies\RandomSelectionStrategy.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="TeamCity\BuildType.cs" />
+    <Compile Include="TeamCity\BuildTypeParser.cs" />
+    <Compile Include="TeamCity\BuildTypeRunner.cs" />
+    <Compile Include="TeamCity\GetAllProjectsCommand.cs" />
+    <Compile Include="TeamCity\GetBuildTypesCommand.cs" />
+    <Compile Include="TeamCity\IBuildTypeRunner.cs" />
+    <Compile Include="TeamCity\IProjectRepository.cs" />
+    <Compile Include="TeamCity\IXmlParser.cs" />
+    <Compile Include="TeamCity\Project.cs" />
+    <Compile Include="TeamCity\ProjectParser.cs" />
+    <Compile Include="TeamCity\ProjectRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web\WebRequestMaker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
